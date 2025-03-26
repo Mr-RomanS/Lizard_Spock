@@ -39,7 +39,7 @@ window.addEventListener("load", function () {
   function choiceComp() {
     blocked = true;
     //запускаем блокеровку выбора пока компьютор делает свой ход
-    let rand = Math.floor(Math.random() * 3);
+    let rand = Math.floor(Math.random() * 5);
     //запускаем рандомное число что бы компьютор сделал рандомный выбор из предложеных вариантов(* 3 потому что вариантов только три)
     compField.classList.add("blink");
     //добавляем в заранее созданную переменную моргание
@@ -70,6 +70,8 @@ window.addEventListener("load", function () {
       case "rockrock":
       case "scissorsscissors":
       case "paperpaper":
+      case "lizardlizard":
+      case "spockspock":
         //варианты ничьей
         res.innerText = "Draw!";
         //выводим надпись что получилась ничья
@@ -81,8 +83,15 @@ window.addEventListener("load", function () {
       //прерываем процесс что бы остральной код не выполнялся
 
       case "rockscissors":
+      case "rocklizard":
       case "scissorspaper":
+      case "scissorslizard":
       case "paperrock":
+      case "paperspock":
+      case "lizardpaper":
+      case "lizardspock":
+      case "spockrock":
+      case "spockscissors":
         //варианты моего выиграша
         res.innerText = "You Win!";
         //вывводим текст с победой
@@ -103,8 +112,15 @@ window.addEventListener("load", function () {
         break;
       //прерываем остальной код
       case "scissorsrock":
+      case "lizardrock":
       case "paperscissors":
+      case "lizardscissors":
       case "rockpaper":
+      case "spockpaper":
+      case "paperlizard":
+      case "spocklizard":
+      case "rockspock":
+      case "cissorsspocks":
         //варианты выиграша компьютора
         res.innerText = "You Loss!";
         //вывводим текст с проиграшем

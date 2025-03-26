@@ -5,107 +5,139 @@
   margin: 0;
   padding: 0;
 }
+
 body {
-  background: #1e88e5;
+  background-image: url("/img/hintergrund.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+}
+
+.allgame {
+  padding: 20px;
+  background: linear-gradient(45deg, red, orange);
+  border: 10px solid transparent;
+  border-radius: 20px;
+  background-clip: padding-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+/* 
+oben ist die logik allgemein */
+.center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  color: #fff;
-  font-size: 16px;
-  font-family: sans-serif;
 }
-.game {
-  border: 3px solid #fff;
-  width: 100%;
-  max-width: 700px;
-  padding: 50px;
-  border-radius: 3px;
+.center h1 {
+  margin: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(120deg, blue, orange, cyan);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.game h1 {
-  font-size: 30px;
-  text-align: center;
-}
+
 .counter-block {
   width: 200px;
-  border: 2px solid #000;
-  margin: 20px auto;
+  border: 1px solid rgb(41, 2, 2);
+  border-radius: 8px;
+  margin: 20px;
   padding: 10px;
   display: flex;
   justify-content: space-around;
-  font-size: 44px;
+  font-size: 40px;
 }
+
 .counter-block span {
   margin: 0 25px;
 }
+
 .count {
   position: relative;
   width: 50px;
   text-align: center;
 }
+
 .count::before {
   content: "";
   display: block;
   padding: 3px 8px;
-  background: #1e88e5;
-  color: #fff;
+  background: yellow;
+  color: black;
   font-size: 14px;
   position: absolute;
-  top: 50px;
+  border: none;
+  border-radius: 2px;
 }
+
 .count-user::before {
-  content: "Player";
+  content: "Player!";
   left: -5px;
+  top: 100%;
 }
+
 .count-comp::before {
-  content: "Comp";
+  content: "Comp!";
   right: -5px;
+  top: 100%;
 }
-.figure-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 20px;
+.comp-field::before {
+  content: "Comp!";
+  left: 50%;
+  font-size: 20px;
+  color: black;
 }
-.user-field,
-.comp-field {
-  width: 50%;
+.user-field::before {
+  content: "Player!";
+  left: 50%;
+  font-size: 20px;
+  color: black;
+}
+.result {
+  border: 2px solid #b85c00;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+/* oben is die Logik Mittel,Counter */
+.comp-field,
+.user-field {
   display: flex;
+  flex-direction: column;
 }
 .field {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 4px solid #fff;
+  border: 2px solid black;
   cursor: pointer;
   margin: 5px;
   transition: 0.2s;
   overflow: hidden;
-  box-shadow: 3px 3px 5px #000;
+  box-shadow: 0 0 10px greenyellow;
   outline: none;
-}
-.result {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .field.active {
   background-color: green;
 }
+
 .field.error {
   background-color: red;
 }
-.comp-field {
-  justify-content: flex-end;
-}
-.rock {
-  background: url(../img/rock.png) center no-repeat;
-}
-.scissors {
-  background: url(../img/scissors.png) center no-repeat;
-}
-.paper {
-  background: url(../img/paper.png) center no-repeat;
-}
+
 .comp-field.blink .rock {
   animation: blink 0.3s linear infinite;
 }
@@ -115,73 +147,98 @@ body {
 .comp-field.blink .paper {
   animation: blink 0.3s 0.2s linear infinite;
 }
+.comp-field.blink .lizard {
+  animation: blink 0.3s 0.3s linear infinite;
+}
+.comp-field.blink .spock {
+  animation: blink 0.3s 0.4s linear infinite;
+}
+
 .comp-field.blink {
   animation-play-state: paused;
 }
+
 @keyframes blink {
   100% {
     background-color: green;
   }
 }
-.buttons {
-  padding: 20px 15px;
+
+/* oben is die Logik Optionen */
+.play {
+  font-size: 25px;
   text-align: center;
-}
-.buttons button {
-  margin: 0 8px;
   cursor: pointer;
   border: none;
-  border-radius: 30px;
-  color: #fff;
+  border-radius: 20px;
+  padding: 15px 15px;
+  color: black;
   text-transform: uppercase;
-  padding: 10px 20px;
   font-weight: bold;
-  font-size: 16px;
-  box-shadow: 2px 3px 0 #0c4e00;
+  box-shadow: 0 0 16px;
   transition: 0.2s;
   outline: none;
+  background: linear-gradient(180deg, #00cb48, #126e01);
 }
 button:hover,
 button:active {
   transform: translate(1px, 1px);
   box-shadow: 1px 1px 0 #0c4e00;
 }
-.play {
-  background: linear-gradient(180deg, #00cb48, #126e01);
-}
 
+.field i {
+  font-size: 2em;
+}
+/* oben is die Stil der Tasten */
 @media (max-width: 700px) {
-  .game {
-    padding: 10px;
-  }
-  .figure-container {
+  .allgame {
     flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+    padding: 10px;
+    position: relative;
   }
+
+  .center {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+  }
+
   .user-field,
   .comp-field {
     width: 100%;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    gap: 5px;
+    position: absolute;
+  }
+
+  .user-field::before {
+    content: "Player!";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: black;
   }
   .user-field {
-    margin-bottom: 20px;
-  }
-  .user-field::before {
-    content: "Player:";
-    display: block;
-    width: 100%;
-    font-size: 20px;
-    text-align: center;
+    bottom: 10px;
   }
   .comp-field::before {
-    content: "Computer:";
-    display: block;
-    width: 100%;
+    content: "Comp!";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 20px;
-    text-align: center;
+    color: black;
   }
-  .game h1 {
-    font-size: 20px;
+  .comp-field {
+    bottom: 150px;
   }
 }
