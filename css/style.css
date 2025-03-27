@@ -6,8 +6,14 @@
   padding: 0;
 }
 
+html,
 body {
-  background-image: url("/img/hintergrund.jpg");
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(180deg, blue, black);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -121,7 +127,7 @@ oben ist die logik allgemein */
   border: 2px solid black;
   cursor: pointer;
   margin: 5px;
-  transition: 0.2s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   overflow: hidden;
   box-shadow: 0 0 10px greenyellow;
   outline: none;
@@ -180,23 +186,20 @@ oben ist die logik allgemein */
   outline: none;
   background: linear-gradient(180deg, #00cb48, #126e01);
 }
-button:hover,
-button:active {
-  transform: translate(1px, 1px);
+.field:active {
   box-shadow: 1px 1px 0 #0c4e00;
 }
-
 .field i {
   font-size: 2em;
 }
 /* oben is die Stil der Tasten */
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .allgame {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    width: 100%;
-    padding: 10px;
+    width: 100vh;
+    padding: 20px;
     position: relative;
   }
 
@@ -204,7 +207,7 @@ button:active {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: first baseline;
+    justify-content: flex-start;
   }
 
   .user-field,
@@ -213,21 +216,15 @@ button:active {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 5px;
+    gap: 3px;
     position: absolute;
   }
 
-  .user-field::before {
-    content: "Player!";
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-    color: black;
-  }
   .user-field {
-    bottom: 10px;
+    bottom: 300px;
+  }
+  .comp-field {
+    bottom: 400px;
   }
   .comp-field::before {
     content: "Comp!";
@@ -238,7 +235,44 @@ button:active {
     font-size: 20px;
     color: black;
   }
+  .user-field::before {
+    content: "Player!";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: black;
+  }
+
+  .field {
+    width: 50px;
+    height: 50px;
+    font-size: 10px;
+  }
+
+  .field i {
+    font-size: 1em;
+  }
+  .play {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (max-height: 845px) and (max-width: 400px) {
+  .user-field {
+    bottom: 100px;
+  }
   .comp-field {
-    bottom: 150px;
+    bottom: 200px;
+  }
+  .play {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
   }
 }
