@@ -186,7 +186,9 @@ oben ist die logik allgemein */
   outline: none;
   background: linear-gradient(180deg, #00cb48, #126e01);
 }
-.field:active {
+
+button:hover,
+button:active {
   box-shadow: 1px 1px 0 #0c4e00;
 }
 .field i {
@@ -261,7 +263,7 @@ oben ist die logik allgemein */
     transform: translateX(-50%);
   }
 }
-@media (max-height: 845px) and (max-width: 400px) {
+@media (max-height: 845px) {
   .user-field {
     bottom: 100px;
   }
