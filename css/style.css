@@ -188,10 +188,8 @@ oben ist die logik allgemein */
 }
 button:hover,
 button:active {
-  transform: translate(1px, 1px);
   box-shadow: 1px 1px 0 #0c4e00;
 }
-
 .field i {
   font-size: 2em;
 }
@@ -210,7 +208,7 @@ button:active {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: first baseline;
+    justify-content: flex-start;
   }
 
   .user-field,
@@ -224,10 +222,10 @@ button:active {
   }
 
   .user-field {
-    bottom: 100px;
+    bottom: 300px;
   }
   .comp-field {
-    bottom: 200px;
+    bottom: 400px;
   }
   .comp-field::before {
     content: "Comp!";
@@ -256,5 +254,11 @@ button:active {
 
   .field i {
     font-size: 1em;
+  }
+  .play {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
