@@ -7,7 +7,7 @@
 }
 
 body {
-  background: linear-gradient(180deg, blue, black);
+  background-color: linear-gradient(180deg, blue, black);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
