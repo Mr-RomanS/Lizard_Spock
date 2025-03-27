@@ -262,3 +262,18 @@ button:active {
     transform: translateX(-50%);
   }
 }
+@media (max-height: 845px) {
+  .user-field {
+    bottom: 100px;
+  }
+  .comp-field {
+    bottom: 200px;
+  }
+  .play {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+  }
+}
