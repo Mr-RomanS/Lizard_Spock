@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
     //записываем комбинации выбранные компьютором и пользователем
     countU = 0,
     countC = 0,
-    //счетчики для узера и компьютера
+    //счетчики для юзера и компьютера
     blocked = false;
 
   function choiceUser(e) {
@@ -56,7 +56,7 @@ window.addEventListener("load", function () {
       //подкрашиваем тот вариант который выбрал компьютор
       winner();
       //выводим результат
-    }, 3000);
+    }, 2000);
   }
   //функция для выбора комбинации компьютера
 
@@ -81,13 +81,12 @@ window.addEventListener("load", function () {
         //и включаем музыку(она вкуючиться только когда будет ничья)
         break;
       //прерываем процесс что бы остральной код не выполнялся
-
-      case "rockscissors":
-      case "rocklizard":
       case "scissorspaper":
       case "scissorslizard":
       case "paperrock":
       case "paperspock":
+      case "rockscissors":
+      case "rocklizard":
       case "lizardpaper":
       case "lizardspock":
       case "spockrock":
@@ -112,15 +111,15 @@ window.addEventListener("load", function () {
         break;
       //прерываем остальной код
       case "scissorsrock":
-      case "lizardrock":
-      case "paperscissors":
-      case "lizardscissors":
-      case "rockpaper":
-      case "spockpaper":
+      case "scissorsspock":
       case "paperlizard":
-      case "spocklizard":
+      case "paperscissors":
+      case "rockpaper":
       case "rockspock":
-      case "cissorsspocks":
+      case "lizardrock":
+      case "lizardscissors":
+      case "spockpaper":
+      case "spocklizard":
         //варианты выиграша компьютора
         res.innerText = "You Loss!";
         //вывводим текст с проиграшем
