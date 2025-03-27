@@ -196,7 +196,7 @@ button:active {
   font-size: 2em;
 }
 /* oben is die Stil der Tasten */
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .allgame {
     flex-direction: column;
     justify-content: space-between;
@@ -223,17 +223,11 @@ button:active {
     position: absolute;
   }
 
-  .user-field::before {
-    content: "Player!";
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-    color: black;
-  }
   .user-field {
-    bottom: 10px;
+    bottom: 100px;
+  }
+  .comp-field {
+    bottom: 200px;
   }
   .comp-field::before {
     content: "Comp!";
@@ -244,8 +238,14 @@ button:active {
     font-size: 20px;
     color: black;
   }
-  .comp-field {
-    bottom: 150px;
+  .user-field::before {
+    content: "Player!";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: black;
   }
 
   .field {
